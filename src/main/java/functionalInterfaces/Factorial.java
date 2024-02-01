@@ -1,19 +1,21 @@
 package functionalInterfaces;
 
 import java.util.*;
-public class Factorial
+public  class Factorial
 {
-    public static void main(String []args)
+    public static int FindFactorial (int n)
     {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the number: ");
-        int num=sc.nextInt();
-        int i=1,fact=1;
-        while(i<=num)
-        {
-            fact=fact*i;
-            i++;
+        int i=2,fact=1;
+        if(n==0||n==1)
+            return 1;
+        else{
+            while(i<=n)
+            {
+                fact=fact*i;
+                i++;
+            }
+            return fact;
         }
-        System.out.println("Factorial of the number: "+fact);
+
     }
 }
