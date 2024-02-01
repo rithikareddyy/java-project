@@ -2,21 +2,12 @@ package functionalInterfaces;
 
 public class Swapping {
 
-    public static void main(String[] args) {
+public static void Swap(int x, int y) {
+    x = x + y;
+    y = x - y;
+    x = x - y;
 
-        int x = 10;
-        int y = 20;
+    System.out.println("After swapping: x = " + x + ", y = " + y );
 
-        System.out.println("Before Swapping");
-        System.out.println("" + x);
-        System.out.println("" + y);
-
-        x = x + y;
-        y = x - y;
-        x = x - y;
-
-        System.out.println("After Swapping");
-        System.out.println("" + x);
-        System.out.println("" + y);
-    }
+   }
 }
