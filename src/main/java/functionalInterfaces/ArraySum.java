@@ -1,12 +1,15 @@
 package functionalInterfaces;
 
 public class ArraySum {
-    public static void main(String[] args) {
-        int [] arr = new int [] {1, 2, 3, 4, 5};
+    public static int Sum(int[] a)
+    {
+
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum = sum + arr[i];
+        for (int num : a) {
+            sum += num;
         }
-        System.out.println("Sum of all the elements of an array: " + sum);
+        return sum;
+
+
     }
 }
