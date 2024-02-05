@@ -7,8 +7,8 @@ public class EvenNumberFilter {
 
     public static List<Integer> filterAndDoubleOddNumbers(List<Integer> numbers) {
         return numbers.stream()
-                .filter(n -> n % 2 != 0) // Filter out even numbers
-                .map(n -> n * 2)          // Double each remaining odd number
+                .filter(n -> n % 2 == 0  )
+                .map(n -> n * 2)
                 .collect(Collectors.toList());
     }
 }
