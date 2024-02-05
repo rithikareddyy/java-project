@@ -10,7 +10,7 @@ public class FilterStrings {
         Predicate<String> startsWithA = s -> s.startsWith("A") || s.startsWith("a");
 
         return inputList.stream()
-                .filter(startsWithA.negate()) // Negate the predicate to filter out strings starting with "A"
+                .filter(startsWithA)
                 .collect(Collectors.toList());
     }
 }
