@@ -1,21 +1,26 @@
 package lambdas;
 
-import java.util.Arrays;
-import java.util.Comparator;
 
 import java.util.Arrays;
-import java.util.Comparator;
-
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ArraySort {
-
     public static String[] sortStrings(String[] strings) {
-        return Arrays.stream(strings)
-                .sorted(Comparator.comparing((String s) -> s.length())
-                        .thenComparing(Comparator.comparing((String s) -> s.length()).reversed())
-                        .thenComparing(Comparator.comparing((String s) -> s.charAt(s.length() - 1)).reversed()))
-                .toArray(String[]::new);
+
+        return Stream.of(strings).sorted((s1, s2) -> {
+            if (s1.length() != s2.length()) {
+                return s1.length() - s2.length();
+            } else {
+                return Character.compare(s1.charAt(s1.length() - 1),s2.charAt(s2.length() - 1));
+            }
+        }).toArray(String[]::new);
+
+    }
+
+    public static void main(String[] args) {
+        String[] strings = {"apple", "banana", "orange", "pear", "grape"};
+        sortStrings(strings);
+        System.out.println(Arrays.toString(strings));
     }
 }

@@ -11,6 +11,5 @@ public class MathOperatorTest {
         int result = addition.operate(10, 5);
         assertEquals(15, result);
     }
-
 }
 
