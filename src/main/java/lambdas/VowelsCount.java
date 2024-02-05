@@ -3,19 +3,22 @@ package lambdas;
 import java.util.Arrays;
 
 public class VowelsCount {
+    public static void main(String[] args) {
+        String[] strings = {"hello", "world", "apple", "banana", "kiwi"};
 
-    public static void printStringsWithVowels(String[] strings) {
         Arrays.stream(strings)
-                .filter(VowelsCount::containsVowels)
-                .forEach(s -> System.out.println("String: " + s + ", Vowel Count: " + countVowels(s)));
+                .filter(str -> containsVowels(str))
+                .forEach(str -> {
+                    int vowelCount = countVowels(str);
+                    System.out.println("String: " + str + ", Vowel Count: " + vowelCount);
+                });
     }
 
-    private static boolean containsVowels(String str) {
-        return str.chars().anyMatch(c -> "aeiouAEIOU".indexOf(c) != -1);
+    public static boolean containsVowels(String str) {
+        return str.toLowerCase().matches(".[aeiou].");
     }
 
-    private static long countVowels(String str) {
-        return str.chars().filter(c -> "aeiouAEIOU".indexOf(c) != -1).count();
+    public static int countVowels(String str) {
+        return (int) str.toLowerCase().chars().filter(ch -> "aeiou".indexOf(ch) != -1).count();
     }
 }
-
