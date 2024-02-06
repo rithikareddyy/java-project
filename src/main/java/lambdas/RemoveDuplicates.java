@@ -7,7 +7,7 @@ public class RemoveDuplicates {
 
     public static List<Integer> removeDuplicateIntegers(List<Integer> numbers) {
         return numbers.stream()
-                .distinct()               // Remove duplicates
+                .distinct()
                 .collect(Collectors.toList());
     }
 }

@@ -11,7 +11,7 @@ public class MaxStringFinderTest {
     @Test
     public void testFindMaxString() {
         List<String> inputList = Arrays.asList("apple", "banana", "Orange", "Grapes", "kiwi");
-        String expectedOutput = "Orange"; // Based on natural sorting order (case-insensitive)
+        String expectedOutput = "Orange";
 
         String result = MaxStringFinder.findMaxString(inputList);
 
