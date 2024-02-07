@@ -1,36 +1,31 @@
 package arrays;
-
 public class ArrayMinMaxFinder {
 
-    public static int findLargestNumber(int[] array) {
-        if (array == null || array.length == 0) {
-            throw new IllegalArgumentException("Array is empty or null");
+    public static void findMinMax(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
+            System.out.println("Array is empty or null. Cannot find min and max.");
+            return;
         }
 
-        int max = array[0];
+        int smallest = numbers[0];
+        int largest = numbers[0];
 
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > max) {
-                max = array[i];
+        for (int num : numbers) {
+            if (num < smallest) {
+                smallest = num;
+            }
+            if (num > largest) {
+                largest = num;
             }
         }
 
-        return max;
+        System.out.println("Smallest number: " + smallest);
+        System.out.println("Largest number: " + largest);
     }
 
-    public static int findSmallestNumber(int[] array) {
-        if (array == null || array.length == 0) {
-            throw new IllegalArgumentException("Array is empty or null");
-        }
-
-        int min = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
-            }
-        }
-
-        return min;
+    public static void main(String[] args) {
+        // Example usage
+        int[] numbers = {5, 2, 9, 1, 7, 3, 8};
+        findMinMax(numbers);
     }
 }
